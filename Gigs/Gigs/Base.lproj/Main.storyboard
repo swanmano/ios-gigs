@@ -83,7 +83,7 @@
                                     <segment title="Log In"/>
                                 </segments>
                                 <connections>
-                                    <action selector="signInSignUpChanged:" destination="VMt-g7-cna" eventType="valueChanged" id="lxS-rW-2Gc"/>
+                                    <action selector="signInTypeChanged:" destination="VMt-g7-cna" eventType="valueChanged" id="lxS-rW-2Gc"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHS-Hv-K6B">

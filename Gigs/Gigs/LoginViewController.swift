@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     }
     
 // MARK: Actions
-    @IBAction func signInSignUpChanged(_ sender: UISegmentedControl) {
+    @IBAction func signInTypeChanged(_ sender: UISegmentedControl) {
     }
     @IBAction func SignInUpButtonTapped(_ sender: UIButton) {
     }
