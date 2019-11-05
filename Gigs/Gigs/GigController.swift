@@ -17,7 +17,7 @@ enum HTTPMethod: String {
 class GigController {
     
     var bearer: Bearer?
-    private let baseURL = URL(string: "https://lambdagigs.vapor.cloud.api")!
+    private let baseURL = URL(string: "https://lambdagigs.vapor.cloud/api")!
     
     
     // MARK: Methods
