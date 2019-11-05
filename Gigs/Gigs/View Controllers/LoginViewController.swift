@@ -8,10 +8,16 @@
 
 import UIKit
 
+enum LogInType {
+    case signUp
+    case logIn
+}
 
 class LoginViewController: UIViewController {
     
     // MARK: Properties
+    var gigController: GigController!
+    var loginType = LogInType.signUp
     
     
     // MARK: Outlets
@@ -29,8 +35,17 @@ class LoginViewController: UIViewController {
     
 // MARK: Actions
     @IBAction func signInTypeChanged(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            loginType = .signUp
+            signInButton.setTitle("Sign Up", for: .normal)
+        } else {
+            loginType = .logIn
+            signInButton.setTitle("Log In", for: .normal)
+        }
     }
+    
     @IBAction func signInUpButtonTapped(_ sender: UIButton) {
+        
     }
     
 

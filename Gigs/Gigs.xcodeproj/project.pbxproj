@@ -68,8 +68,7 @@
 				4411F8EE23713B22003E5B05 /* SceneDelegate.swift */,
 				44394C062371F3FC0095D8A2 /* Models */,
 				44394C072371F4840095D8A2 /* GigController.swift */,
-				4411F90023713C42003E5B05 /* GigsTableViewController.swift */,
-				4411F90223713E17003E5B05 /* LoginViewController.swift */,
+				44394C0923720C630095D8A2 /* View Controllers */,
 				4411F8F223713B22003E5B05 /* Main.storyboard */,
 				4411F8F523713B23003E5B05 /* Assets.xcassets */,
 				4411F8F723713B23003E5B05 /* LaunchScreen.storyboard */,
@@ -85,6 +84,15 @@
 				44394C032371F3600095D8A2 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		44394C0923720C630095D8A2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4411F90023713C42003E5B05 /* GigsTableViewController.swift */,
+				4411F90223713E17003E5B05 /* LoginViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
