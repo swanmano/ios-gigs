@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aUD-1K-cGQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aUD-1K-cGQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -91,7 +91,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <action selector="SignInUpButtonTapped:" destination="VMt-g7-cna" eventType="touchUpInside" id="6wz-Vp-IkB"/>
+                                    <action selector="signInUpButtonTapped:" destination="VMt-g7-cna" eventType="touchUpInside" id="6wz-Vp-IkB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,9 +99,9 @@
                         <viewLayoutGuide key="safeArea" id="XIc-G6-hfJ"/>
                     </view>
                     <connections>
-                        <outlet property="SignInButton" destination="LHS-Hv-K6B" id="OfT-bm-ssa"/>
                         <outlet property="passwordTextField" destination="MtA-xe-cwr" id="xHT-rM-SPM"/>
                         <outlet property="segmentedControllerState" destination="MtQ-U9-Juv" id="u8w-0c-nTg"/>
+                        <outlet property="signInButton" destination="LHS-Hv-K6B" id="OfT-bm-ssa"/>
                         <outlet property="usernameTextField" destination="09q-5r-GGQ" id="5rG-Pg-roU"/>
                     </connections>
                 </viewController>

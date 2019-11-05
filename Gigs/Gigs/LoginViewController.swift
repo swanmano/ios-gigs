@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var segmentedControllerState: UISegmentedControl!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var SignInButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
     
 
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
 // MARK: Actions
     @IBAction func signInTypeChanged(_ sender: UISegmentedControl) {
     }
-    @IBAction func SignInUpButtonTapped(_ sender: UIButton) {
+    @IBAction func signInUpButtonTapped(_ sender: UIButton) {
     }
     
 
