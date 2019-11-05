@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="-104.34782608695653" y="311.38392857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="7BS-Ti-WeQ">
             <objects>
-                <viewController id="VMt-g7-cna" sceneMemberID="viewController">
+                <viewController id="VMt-g7-cna" customClass="LoginViewController" customModule="Gigs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H8g-Tu-eV1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,16 +82,28 @@
                                     <segment title="Sign Up"/>
                                     <segment title="Log In"/>
                                 </segments>
+                                <connections>
+                                    <action selector="signInSignUpChanged:" destination="VMt-g7-cna" eventType="valueChanged" id="lxS-rW-2Gc"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHS-Hv-K6B">
                                 <rect key="frame" x="180" y="337" width="54" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="SignInUpButtonTapped:" destination="VMt-g7-cna" eventType="touchUpInside" id="6wz-Vp-IkB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="XIc-G6-hfJ"/>
                     </view>
+                    <connections>
+                        <outlet property="SignInButton" destination="LHS-Hv-K6B" id="OfT-bm-ssa"/>
+                        <outlet property="passwordTextField" destination="MtA-xe-cwr" id="xHT-rM-SPM"/>
+                        <outlet property="segmentedControllerState" destination="MtQ-U9-Juv" id="u8w-0c-nTg"/>
+                        <outlet property="usernameTextField" destination="09q-5r-GGQ" id="5rG-Pg-roU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcp-H4-M7B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
