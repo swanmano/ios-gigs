@@ -30,8 +30,9 @@ class LoginViewController: UIViewController {
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        signInButton.backgroundColor = UIColor(hue: 190.360, saturation: 70/100, brightness: 80/100, alpha: 1.0)
+        signInButton.tintColor = .white
+        signInButton.layer.cornerRadius = 8.0
     }
     
 // MARK: Actions
