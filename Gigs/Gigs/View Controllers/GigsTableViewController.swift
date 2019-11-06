@@ -53,8 +53,6 @@ class GigsTableViewController: UITableViewController {
             guard let loginVC = segue.destination as? LoginViewController else { return }
             loginVC.gigController = gigController
         }
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
 
 

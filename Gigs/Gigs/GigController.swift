@@ -17,13 +17,13 @@ enum HTTPMethod: String {
 class GigController {
     
     var bearer: Bearer?
-    private let baseURL = URL(string: "https://lambdagigs.vapor.cloud/api")!
+    private let baseUrl = URL(string: "https://lambdagigs.vapor.cloud/api")!
     
     
     // MARK: Methods
     // sign up method
     func signUp(with user: User, completion: @escaping (Error?) -> ()) {
-        let signUpURL = baseURL.appendingPathComponent("users/signup")
+        let signUpURL = baseUrl.appendingPathComponent("users/signup")
         
         var request = URLRequest(url: signUpURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -57,7 +57,7 @@ class GigController {
     
     // log in method
     func logIn(with user: User, completion: @escaping (Error?) -> ()) {
-        let logInUrl = baseURL.appendingPathComponent("users/login")
+        let logInUrl = baseUrl.appendingPathComponent("users/login")
         
         var request = URLRequest(url: logInUrl)
         request.httpMethod = HTTPMethod.post.rawValue
