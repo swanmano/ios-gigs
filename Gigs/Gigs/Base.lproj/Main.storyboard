@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="-307" y="311"/>
         </scene>
-        <!--View Controller-->
+        <!--Gig Detail View Controller-->
         <scene sceneID="uVq-6f-4yW">
             <objects>
-                <viewController id="xkf-62-6TF" sceneMemberID="viewController">
+                <viewController id="xkf-62-6TF" customClass="GigDetailViewController" customModule="Gigs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OqI-IT-86s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,7 +79,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhl-Tc-zcQ">
-                                <rect key="frame" x="20" y="199" width="76" height="21"/>
+                                <rect key="frame" x="20" y="184" width="76" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -90,7 +90,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="Thm-tS-2KP">
-                                <rect key="frame" x="0.0" y="228" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="213" width="414" height="216"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="568033200">
                                     <!--2019-01-01 11:00:00 +0000-->
                                 </date>
@@ -99,7 +99,7 @@
                                 </date>
                             </datePicker>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nzh-7c-2k4">
-                                <rect key="frame" x="20" y="483" width="374" height="369"/>
+                                <rect key="frame" x="20" y="468" width="374" height="384"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -107,7 +107,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnm-px-B7w">
-                                <rect key="frame" x="20" y="452" width="93" height="21"/>
+                                <rect key="frame" x="20" y="437" width="93" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -126,7 +126,7 @@
                             <constraint firstItem="RZo-gG-jPu" firstAttribute="bottom" secondItem="Nzh-7c-2k4" secondAttribute="bottom" constant="10" id="XJm-bq-x0P"/>
                             <constraint firstItem="Thm-tS-2KP" firstAttribute="leading" secondItem="RZo-gG-jPu" secondAttribute="leading" id="iBv-ZH-wXu"/>
                             <constraint firstItem="7e8-Fm-3og" firstAttribute="leading" secondItem="tlM-Ra-2fZ" secondAttribute="trailing" constant="8" id="j5J-IP-oKH"/>
-                            <constraint firstItem="Hhl-Tc-zcQ" firstAttribute="top" secondItem="tlM-Ra-2fZ" secondAttribute="bottom" constant="50" id="kWe-Kc-o8G"/>
+                            <constraint firstItem="Hhl-Tc-zcQ" firstAttribute="top" secondItem="tlM-Ra-2fZ" secondAttribute="bottom" constant="35" id="kWe-Kc-o8G"/>
                             <constraint firstItem="Thm-tS-2KP" firstAttribute="trailing" secondItem="RZo-gG-jPu" secondAttribute="trailing" id="lzR-LR-LsK"/>
                             <constraint firstItem="wnm-px-B7w" firstAttribute="leading" secondItem="RZo-gG-jPu" secondAttribute="leading" constant="20" id="tWS-h9-oCb"/>
                             <constraint firstItem="Hhl-Tc-zcQ" firstAttribute="leading" secondItem="RZo-gG-jPu" secondAttribute="leading" constant="20" id="wCk-KO-FcG"/>
@@ -134,7 +134,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RZo-gG-jPu"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HNw-rK-Hu6"/>
+                    <navigationItem key="navigationItem" id="HNw-rK-Hu6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="3HF-DD-kCX">
+                            <connections>
+                                <action selector="saveJobEntry:" destination="xkf-62-6TF" id="PCo-4A-HGX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="jobDatePicker" destination="Thm-tS-2KP" id="Gfr-u2-Df1"/>
+                        <outlet property="jobDescription" destination="Nzh-7c-2k4" id="uec-ho-nlN"/>
+                        <outlet property="jobTitleTextField" destination="7e8-Fm-3og" id="H4D-RJ-lIX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KpS-tb-ent" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
