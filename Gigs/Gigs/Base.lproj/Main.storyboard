@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aUD-1K-cGQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aUD-1K-cGQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,6 +39,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xkf-62-6TF" kind="show" identifier="ViewGig" id="ppS-tu-QWr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -46,14 +49,36 @@
                             <outlet property="delegate" destination="0wg-Yy-SgJ" id="HR4-1c-WJp"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="rVq-oM-vff"/>
+                    <navigationItem key="navigationItem" id="rVq-oM-vff">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="A01-6B-kvx">
+                            <connections>
+                                <segue destination="xkf-62-6TF" kind="show" identifier="AddNewGig" id="lrG-5H-Zlj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="VMt-g7-cna" kind="presentation" identifier="LoginSegue" modalPresentationStyle="fullScreen" id="Vw1-bn-jb4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a9U-Js-Pre" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-104.34782608695653" y="311.38392857142856"/>
+            <point key="canvasLocation" x="-307" y="311"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uVq-6f-4yW">
+            <objects>
+                <viewController id="xkf-62-6TF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OqI-IT-86s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="RZo-gG-jPu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HNw-rK-Hu6"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KpS-tb-ent" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457" y="666"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="7BS-Ti-WeQ">
@@ -133,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcp-H4-M7B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611.59420289855075" y="84.375"/>
+            <point key="canvasLocation" x="457" y="-16"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Aoo-df-Cbi">
@@ -154,4 +179,7 @@
             <point key="canvasLocation" x="-1014.4927536231885" y="311.38392857142856"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lrG-5H-Zlj"/>
+    </inferredMetricsTieBreakers>
 </document>
