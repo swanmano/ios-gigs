@@ -14,4 +14,5 @@ enum NetworkError: Error {
     case badData
     case notDecodedProperly
     case otherError
+    case notEncodedProperly
 }

@@ -64,6 +64,9 @@ class GigsTableViewController: UITableViewController {
         if segue.identifier == "LoginSegue" {
             guard let loginVC = segue.destination as? LoginViewController else { return }
             loginVC.gigController = gigController
+        } else if segue.identifier == "AddNewGig" {
+            guard let gigDetailVC = segue.destination as? GigDetailViewController else { return }
+            gigDetailVC.gigController = gigController
         }
     }
 

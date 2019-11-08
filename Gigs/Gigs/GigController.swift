@@ -138,7 +138,7 @@ class GigController {
             decoder.dateDecodingStrategy = .iso8601
             do {
                 let allGigs = try decoder.decode([Gig].self, from: data)
-                self.gigs.append(contentsOf: allGigs)
+                self.gigs = allGigs
                 completion(.success(allGigs))
             } catch {
                 print("Error decoding All Gigs objects: \(error)")
@@ -148,5 +148,59 @@ class GigController {
         }.resume()
     }
     
+    func addNewGig(with gig: Gig, completion: @escaping (Result<Bool, NetworkError>) -> ()) {
+        guard let bearer = bearer else {
+            completion(.failure(.noAuthorization))
+            return
+        }
+        
+        let allGigsUrl = baseUrl.appendingPathComponent("gigs")
+        var request = URLRequest(url: allGigsUrl)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let jsonEncoder = JSONEncoder()
+        jsonEncoder.dateEncodingStrategy = .iso8601
+               do {
+                   let jsonData = try jsonEncoder.encode(gig)
+                   request.httpBody = jsonData
+                print(request.httpBody)
+               } catch {
+                   print("Error encoding user object: \(error)")
+                completion(.failure(.notEncodedProperly))
+                   return
+               }
+               
+               URLSession.shared.dataTask(with: request) { data, response, error in
+                   if let response = response as? HTTPURLResponse,
+                       response.statusCode != 200 {
+                    completion(.failure(.otherError))
+                       return
+                   }
+                   
+                   if let error = error {
+                    completion(.failure(.otherError))
+                       return
+                   }
+                   
+                   guard let data = data else {
+                    completion(.failure(.badData))
+                       return
+                   }
+                   
+                   let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                   do {
+                       let allGigs = try decoder.decode(Gig.self, from: data)
+                    self.gigs.append(allGigs)
+                       completion(.success(true))
+                   } catch {
+                       print("Error decoding new Gig object: \(error)")
+                    completion(.failure(.notDecodedProperly))
+                       return
+                   }
+               }.resume()
+           }
     
 }

@@ -14,6 +14,3 @@ struct Gig: Codable {
     var dueDate: Date
 }
 
-//struct Gigs: Codable {
-//    let gigResults: [Gig]
-//}
