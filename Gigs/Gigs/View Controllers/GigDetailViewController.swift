@@ -24,10 +24,10 @@ class GigDetailViewController: UIViewController {
         super.viewDidLoad()
 
         updateViews()
-        // Do any additional setup after loading the view.
     }
     
     // MARK: Actions
+    // button to save after a new gig is entered. Creates a new Gig based on the user input, and calls the addNewGig method with the new Gig; upon returning it pops the view controller back to the table view
     @IBAction func saveJobEntry(_ sender: Any) {
         guard let title = jobTitleTextField.text,
             let description = jobDescription.text else { return }
@@ -40,6 +40,7 @@ class GigDetailViewController: UIViewController {
         }
     }
     
+    // updates the screen to show the values of the cell tapped in the table view; if a cell wasn't tapped then it offers blank fields and the title is "New Gig"
     func updateViews() {
         if let gig = gig {
         jobTitleTextField.text = gig.title

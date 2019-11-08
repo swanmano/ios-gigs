@@ -46,6 +46,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // When user taps the button it first looks for values in the username and password text fields, then it checks to see if it is in the .signUp or .logIn state based on the segmented control. The two states will call their respective methods in the GigController class.
     @IBAction func signInUpButtonTapped(_ sender: UIButton) {
         guard let gigController = gigController else { return }
         if let username = usernameTextField.text,
@@ -84,16 +85,5 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

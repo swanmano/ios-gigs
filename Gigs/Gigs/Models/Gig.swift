@@ -8,6 +8,7 @@
 
 import Foundation
 
+// the object returned by the API and that we want to display in the detail view
 struct Gig: Codable {
     var title: String
     var description: String

@@ -8,6 +8,7 @@
 
 import Foundation
 
+// used to log into the API
 struct User: Codable {
     let username: String
     let password: String

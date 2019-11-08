@@ -22,7 +22,7 @@ class GigController {
     
     
     // MARK: Methods
-    // sign up method
+    // MARK: - Sign UP Method
     func signUp(with user: User, completion: @escaping (Error?) -> ()) {
         let signUpURL = baseUrl.appendingPathComponent("users/signup")
         
@@ -56,7 +56,7 @@ class GigController {
         }.resume()
     }
     
-    // log in method
+    // MARK: - Log in method
     func logIn(with user: User, completion: @escaping (Error?) -> ()) {
         let logInUrl = baseUrl.appendingPathComponent("users/login")
         
@@ -104,7 +104,7 @@ class GigController {
         }.resume()
     }
     
-    // get all gigs
+    // MARK: - Get all gigs method
     func getAllGigs(completion: @escaping (Result<[Gig], NetworkError>) -> ()) {
         guard let bearer = bearer else {
             completion(.failure(.noAuthorization))
@@ -148,6 +148,7 @@ class GigController {
         }.resume()
     }
     
+    // MARK: - Add New Gig Method
     func addNewGig(with gig: Gig, completion: @escaping (Result<Bool, NetworkError>) -> ()) {
         guard let bearer = bearer else {
             completion(.failure(.noAuthorization))
@@ -178,7 +179,7 @@ class GigController {
                        return
                    }
                    
-                   if let error = error {
+                if error != nil {
                     completion(.failure(.otherError))
                        return
                    }

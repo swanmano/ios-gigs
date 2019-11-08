@@ -32,6 +32,7 @@ class GigsTableViewController: UITableViewController {
         if gigController.bearer == nil {
             performSegue(withIdentifier: "LoginSegue", sender: self)
         } else {
+            // after the completion of the getAllGigs method, get the results and set those results to be the allGigs property in this class. Then reload the data and the tableview is updated.
             gigController.getAllGigs { result in
                 if let gigs = try? result.get() {
                     DispatchQueue.main.async {
@@ -60,6 +61,9 @@ class GigsTableViewController: UITableViewController {
 
     
     // MARK: - Navigation
+    // there are three segues: one to sign up and log in
+    // another segue to add a new gig to the API
+    // a third to view the details when the user taps on a gig in the table view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LoginSegue" {
             guard let loginVC = segue.destination as? LoginViewController else { return }
@@ -74,6 +78,7 @@ class GigsTableViewController: UITableViewController {
         }
     }
 
+    // the "dueDate" field is a date but needs to be reformatted as a string to display in the cell.
     func dateFormat(_ date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM dd, yyyy"
