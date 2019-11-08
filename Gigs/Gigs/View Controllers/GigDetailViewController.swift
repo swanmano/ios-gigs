@@ -12,6 +12,7 @@ class GigDetailViewController: UIViewController {
     
     // MARK: Properties
     var gigController: GigController?
+    var gig: Gig?
     
     // MARK: Outlets
     @IBOutlet weak var jobTitleTextField: UITextField!
@@ -22,6 +23,7 @@ class GigDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateViews()
         // Do any additional setup after loading the view.
     }
     
@@ -38,15 +40,13 @@ class GigDetailViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateViews() {
+        if let gig = gig {
+        jobTitleTextField.text = gig.title
+        jobDescription.text = gig.description
+        jobDatePicker.date = gig.dueDate
+        } else {
+            self.title = "New Gig"
+        }
     }
-    */
-
 }

@@ -67,6 +67,10 @@ class GigsTableViewController: UITableViewController {
         } else if segue.identifier == "AddNewGig" {
             guard let gigDetailVC = segue.destination as? GigDetailViewController else { return }
             gigDetailVC.gigController = gigController
+        } else if segue.identifier == "ViewGig" {
+            guard let gigDetailVC = segue.destination as? GigDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
+            gigDetailVC.gig = gigController.gigs[indexPath.row]
         }
     }
 
