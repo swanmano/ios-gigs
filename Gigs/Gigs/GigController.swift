@@ -17,6 +17,7 @@ enum HTTPMethod: String {
 class GigController {
     
     var bearer: Bearer?
+    var gigs: [Gig] = []
     private let baseUrl = URL(string: "https://lambdagigs.vapor.cloud/api")!
     
     
@@ -100,6 +101,50 @@ class GigController {
             }
             
             completion(nil)
+        }.resume()
+    }
+    
+    // get all gigs
+    func getAllGigs(completion: @escaping (Result<[Gig], NetworkError>) -> ()) {
+        guard let bearer = bearer else {
+            completion(.failure(.noAuthorization))
+            return
+        }
+        
+        let allGigsUrl = baseUrl.appendingPathComponent("gigs")
+        var request = URLRequest(url: allGigsUrl)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode == 401 {
+                completion(.failure(.incorrectAuthorization))
+                return
+            }
+            
+            if let error = error {
+                print("Error receiving All Gigs data: \(error)")
+                completion(.failure(.otherError))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.badData))
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .iso8601
+            do {
+                let allGigs = try decoder.decode([Gig].self, from: data)
+                self.gigs.append(contentsOf: allGigs)
+                completion(.success(allGigs))
+            } catch {
+                print("Error decoding All Gigs objects: \(error)")
+                completion(.failure(.notDecodedProperly))
+                return
+            }
         }.resume()
     }
     

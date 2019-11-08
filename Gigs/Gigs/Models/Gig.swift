@@ -8,8 +8,12 @@
 
 import Foundation
 
-struct Gig {
-    let title: String
-    let description: String
-    let dueDate: Date
+struct Gig: Codable {
+    var title: String
+    var description: String
+    var dueDate: Date
 }
+
+//struct Gigs: Codable {
+//    let gigResults: [Gig]
+//}

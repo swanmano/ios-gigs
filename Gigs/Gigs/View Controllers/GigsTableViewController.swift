@@ -13,6 +13,11 @@ class GigsTableViewController: UITableViewController {
     // MARK: Properties
     // the initialization of the gigcontroller is set here
     var gigController = GigController()
+    var allGigs: [Gig]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     
     // MARK: View Lifecycle
@@ -27,7 +32,13 @@ class GigsTableViewController: UITableViewController {
         if gigController.bearer == nil {
             performSegue(withIdentifier: "LoginSegue", sender: self)
         } else {
-            // TODO: fetch gigs here
+            gigController.getAllGigs { result in
+                if let gigs = try? result.get() {
+                    DispatchQueue.main.async {
+                        self.allGigs = gigs
+                    }
+                }
+            }
         }
     }
     
@@ -35,13 +46,14 @@ class GigsTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return gigController.gigs.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GigCell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = gigController.gigs[indexPath.row].title
+        cell.detailTextLabel?.text = gigController.gigs[indexPath.row].description
 
         return cell
     }

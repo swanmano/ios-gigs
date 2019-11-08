@@ -19,6 +19,7 @@
 		44394C082371F4840095D8A2 /* GigController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44394C072371F4840095D8A2 /* GigController.swift */; };
 		44659B7A2374860D0031831E /* GigDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44659B792374860D0031831E /* GigDetailViewController.swift */; };
 		44659B7C237487BF0031831E /* Gig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44659B7B237487BF0031831E /* Gig.swift */; };
+		44659B7E2374D0E60031831E /* Error Codes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44659B7D2374D0E60031831E /* Error Codes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		44394C072371F4840095D8A2 /* GigController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigController.swift; sourceTree = "<group>"; };
 		44659B792374860D0031831E /* GigDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GigDetailViewController.swift; sourceTree = "<group>"; };
 		44659B7B237487BF0031831E /* Gig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gig.swift; sourceTree = "<group>"; };
+		44659B7D2374D0E60031831E /* Error Codes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error Codes.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				4411F8EE23713B22003E5B05 /* SceneDelegate.swift */,
 				44394C062371F3FC0095D8A2 /* Models */,
 				44394C072371F4840095D8A2 /* GigController.swift */,
+				44659B7D2374D0E60031831E /* Error Codes.swift */,
 				44394C0923720C630095D8A2 /* View Controllers */,
 				4411F8F223713B22003E5B05 /* Main.storyboard */,
 				4411F8F523713B23003E5B05 /* Assets.xcassets */,
@@ -178,6 +181,7 @@
 				4411F90323713E17003E5B05 /* LoginViewController.swift in Sources */,
 				44394C042371F3600095D8A2 /* User.swift in Sources */,
 				4411F8ED23713B22003E5B05 /* AppDelegate.swift in Sources */,
+				44659B7E2374D0E60031831E /* Error Codes.swift in Sources */,
 				4411F8EF23713B22003E5B05 /* SceneDelegate.swift in Sources */,
 				4411F90123713C42003E5B05 /* GigsTableViewController.swift in Sources */,
 				44659B7C237487BF0031831E /* Gig.swift in Sources */,
