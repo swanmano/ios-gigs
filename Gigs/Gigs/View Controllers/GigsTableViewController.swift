@@ -53,7 +53,7 @@ class GigsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GigCell", for: indexPath)
 
         cell.textLabel?.text = gigController.gigs[indexPath.row].title
-        cell.detailTextLabel?.text = gigController.gigs[indexPath.row].description
+        cell.detailTextLabel?.text = dateFormat(gigController.gigs[indexPath.row].dueDate)
 
         return cell
     }
@@ -70,5 +70,10 @@ class GigsTableViewController: UITableViewController {
         }
     }
 
+    func dateFormat(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd, yyyy"
+        return formatter.string(from: date)
+    }
 
 }
