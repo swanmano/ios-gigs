@@ -165,7 +165,6 @@ class GigController {
                do {
                    let jsonData = try jsonEncoder.encode(gig)
                    request.httpBody = jsonData
-                print(request.httpBody)
                } catch {
                    print("Error encoding user object: \(error)")
                 completion(.failure(.notEncodedProperly))
